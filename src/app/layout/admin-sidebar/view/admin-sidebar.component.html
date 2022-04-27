@@ -33,7 +33,7 @@
         data-accordion="false"
       >
         <li class="nav-item menu-open">
-          <a [routerLink]="'/'+dashboardRoute" class="nav-link active">
+          <a [routerLink]="'/'+dashboardRoute" routerLinkActive="active" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -41,7 +41,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="pages/widgets.html" class="nav-link">
+          <a [routerLink]="'/'+bookingList" routerLinkActive="active" class="nav-link">
             <i class="nav-icon fas fa-car"></i>
             <p>
               Booking List
@@ -59,31 +59,31 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/examples/project-detail.html" class="nav-link">
+              <a [routerLink]="'/'+homeRoute" routerLinkActive="active" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Home</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/project-detail.html" class="nav-link">
+              <a [routerLink]="'/'+aboutRoute" routerLinkActive="active" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>About</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/project-edit.html" class="nav-link">
+              <a [routerLink]="'/'+serviceRoute" routerLinkActive="active" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Our Srvices</p>
+                <p>Our Service</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/contact-us.html" class="nav-link">
+              <a [routerLink]="'/'+contactRoute" routerLinkActive="active" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Contact us</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/contact-us.html" class="nav-link">
+              <a [routerLink]="'/'+privacyRoute" routerLinkActive="active" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Privacy</p>
               </a>
@@ -91,7 +91,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="pages/widgets.html" class="nav-link">
+          <a [routerLink]="'/'+settingRoute" routerLinkActive="active" class="nav-link">
             <i class="nav-icon fas fa-wrench"></i>
             <p>
               Setting

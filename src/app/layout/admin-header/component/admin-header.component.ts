@@ -8,7 +8,14 @@ import { environment } from '../../../../environments/environment';
 export class AdminHeaderComponent implements OnInit {
 
  dashboardRoute : any = environment.adminDashboard;
-
+ profileRoute : any = environment.adminProfile;
+ bookingList : any = environment.bokkingList;
+ settingRoute : any = environment.adminStting;
+ homeRoute : any = environment.adminHome;
+ aboutRoute : any = environment.adminAbout;
+ serviceRoute : any = environment.adminService;
+ contactRoute : any = environment.adminContact;
+ privacyRoute : any = environment.adminPrivacy;
   constructor() { }
 
   ngOnInit(): void {

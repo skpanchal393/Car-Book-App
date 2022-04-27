@@ -9,6 +9,13 @@ export class AdminSidebarComponent implements OnInit {
 
   profileRoute : any = environment.adminProfile;
   dashboardRoute : any = environment.adminDashboard;
+  bookingList : any = environment.bokkingList;
+  settingRoute : any = environment.adminStting;
+  homeRoute : any = environment.adminHome;
+  aboutRoute : any = environment.adminAbout;
+  serviceRoute : any = environment.adminService;
+  contactRoute : any = environment.adminContact;
+  privacyRoute : any = environment.adminPrivacy;
   
   constructor() { }
 

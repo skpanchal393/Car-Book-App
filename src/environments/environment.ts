@@ -8,6 +8,13 @@ export const environment = {
   adminDashboard : 'admin/dashboard',
   adminSignIn : 'admin/login',
   adminProfile : 'admin/profile',
+  bokkingList : 'admin/booking-list',
+  adminStting : 'admin/setting',
+  adminHome : 'admin/page/home',
+  adminAbout: 'admin/page/about',
+  adminService: 'admin/page/service',
+  adminContact: 'admin/page/contact',
+  adminPrivacy: 'admin/page/privacy',
   home : '/',
 };
 

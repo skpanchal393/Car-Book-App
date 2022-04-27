@@ -17,6 +17,13 @@ import { AdminHeaderComponent } from './layout/admin-header/component/admin-head
 import { AdminSidebarComponent } from './layout/admin-sidebar/component/admin-sidebar.component';
 import { AdminFooterComponent } from './layout/admin-footer/component/admin-footer.component';
 import { ProfileComponent } from './modules/admin/profile/component/profile.component';
+import { BookingListComponent } from './modules/admin/booking-list/component/booking-list.component';
+import { SettingComponent } from './modules/admin/setting/component/setting.component';
+import { HomeComponent } from './modules/admin/pages/home/component/home.component';
+import { AboutComponent } from './modules/admin/pages/about/component/about.component';
+import { ServiceComponent } from './modules/admin/pages/service/component/service.component';
+import { ContactComponent } from './modules/admin/pages/contact/component/contact.component';
+import { PrivacyComponent } from './modules/admin/pages/privacy/component/privacy.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +36,13 @@ import { ProfileComponent } from './modules/admin/profile/component/profile.comp
     AdminSidebarComponent,
     AdminFooterComponent,
     ProfileComponent,
+    BookingListComponent,
+    SettingComponent,
+    HomeComponent,
+    AboutComponent,
+    ServiceComponent,
+    ContactComponent,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,
