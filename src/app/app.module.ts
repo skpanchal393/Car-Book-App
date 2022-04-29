@@ -19,11 +19,11 @@ import { AdminFooterComponent } from './layout/admin-footer/component/admin-foot
 import { ProfileComponent } from './modules/admin/profile/component/profile.component';
 import { BookingListComponent } from './modules/admin/booking-list/component/booking-list.component';
 import { SettingComponent } from './modules/admin/setting/component/setting.component';
-import { HomeComponent } from './modules/admin/pages/home/component/home.component';
-import { AboutComponent } from './modules/admin/pages/about/component/about.component';
-import { ServiceComponent } from './modules/admin/pages/service/component/service.component';
-import { ContactComponent } from './modules/admin/pages/contact/component/contact.component';
-import { PrivacyComponent } from './modules/admin/pages/privacy/component/privacy.component';
+import { HomeComponent, CreateHomeComponent } from './modules/admin/pages/home/component/home.component';
+import { AboutComponent ,CreateAboutComponent} from './modules/admin/pages/about/component/about.component';
+import { ServiceComponent , CreateServiceComponent} from './modules/admin/pages/service/component/service.component';
+import { ContactComponent ,CreateContactComponent } from './modules/admin/pages/contact/component/contact.component';
+import { PrivacyComponent,CreatePrivacyComponent } from './modules/admin/pages/privacy/component/privacy.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +39,15 @@ import { PrivacyComponent } from './modules/admin/pages/privacy/component/privac
     BookingListComponent,
     SettingComponent,
     HomeComponent,
+    CreateHomeComponent,
     AboutComponent,
+    CreateAboutComponent,
     ServiceComponent,
+    CreateServiceComponent,
     ContactComponent,
+    CreateContactComponent,
     PrivacyComponent,
+    CreatePrivacyComponent
   ],
   imports: [
     BrowserModule,

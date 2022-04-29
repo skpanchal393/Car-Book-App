@@ -7,11 +7,11 @@ import { ProfileComponent } from '../modules/admin/profile/component/profile.com
 import { AuthGuard } from '../guards/auth.guard';
 import { BookingListComponent } from '../modules/admin/booking-list/component/booking-list.component';
 import { SettingComponent } from '../modules/admin/setting/component/setting.component';
-import { AboutComponent } from '../modules/admin/pages/about/component/about.component';
-import { HomeComponent } from '../modules/admin/pages/home/component/home.component';
-import { ServiceComponent } from '../modules/admin/pages/service/component/service.component';
-import { ContactComponent } from '../modules/admin/pages/contact/component/contact.component';
-import { PrivacyComponent } from '../modules/admin/pages/privacy/component/privacy.component';
+import { AboutComponent, CreateAboutComponent } from '../modules/admin/pages/about/component/about.component';
+import { HomeComponent, CreateHomeComponent } from '../modules/admin/pages/home/component/home.component';
+import { ServiceComponent, CreateServiceComponent } from '../modules/admin/pages/service/component/service.component';
+import { ContactComponent, CreateContactComponent } from '../modules/admin/pages/contact/component/contact.component';
+import { PrivacyComponent, CreatePrivacyComponent } from '../modules/admin/pages/privacy/component/privacy.component';
 
 const routes: Routes = [
     {
@@ -48,8 +48,28 @@ const routes: Routes = [
         // canActivate: [AuthGuard],
     },
     {
+        path : environment.adminCreateHome,
+        component : CreateHomeComponent,
+        // canActivate: [AuthGuard],
+    },
+    {
+        path : environment.adminEditHome,
+        component : CreateHomeComponent,
+        // canActivate: [AuthGuard],
+    },
+    {
         path : environment.adminAbout,
         component : AboutComponent,
+        // canActivate: [AuthGuard],
+    },
+    {
+        path : environment.adminCreateAbout,
+        component : CreateAboutComponent,
+        // canActivate: [AuthGuard],
+    },
+    {
+        path : environment.adminEditAbout,
+        component : CreateAboutComponent,
         // canActivate: [AuthGuard],
     },
     {
@@ -58,13 +78,43 @@ const routes: Routes = [
         // canActivate: [AuthGuard],
     },
     {
+        path : environment.adminCreateService,
+        component : CreateServiceComponent,
+        // canActivate: [AuthGuard],
+    },
+    {
+        path : environment.adminEditService,
+        component : CreateServiceComponent,
+        // canActivate: [AuthGuard],
+    },
+    {
         path : environment.adminContact,
         component : ContactComponent,
         // canActivate: [AuthGuard],
     },
     {
+        path : environment.adminCreateContact,
+        component : CreateContactComponent,
+        // canActivate: [AuthGuard],
+    },
+    {
+        path : environment.adminEditContact,
+        component : CreateContactComponent,
+        // canActivate: [AuthGuard],
+    },
+    {
         path : environment.adminPrivacy,
         component : PrivacyComponent,
+        // canActivate: [AuthGuard],
+    },
+    {
+        path : environment.adminCreatePrivacy,
+        component : CreatePrivacyComponent,
+        // canActivate: [AuthGuard],
+    },
+    {
+        path : environment.adminEditPrivacy,
+        component : CreatePrivacyComponent,
         // canActivate: [AuthGuard],
     },
 ];
