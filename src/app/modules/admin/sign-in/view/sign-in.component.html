@@ -1,20 +1,57 @@
-<div class="wrapper" style="   display: flex;
-align-items: center;
-flex-direction: column; 
-justify-content: center;
-width: 100%;
-min-height: 100%;
-padding: 20px;">
-    <div id="formContent">
-      <div class="first">
-        <img src="../../../../../assets/img/avatar.png" id="icon" class="profile-user-img img-fluid img-circle" alt="User Icon" />
-      </div>
-      <form>
-        <input type="text" id="login" class="second" name="email" placeholder="Enter Your Email">
-        <input type="password" id="password" class="third" name="password" placeholder="Enter Your Password">
-        <input type="submit" class="fourth" value="Log In">
-      </form>
+<div
+  class="wrapper"
+  style="
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+  "
+>
+  <div id="formContent">
+    <div class="first">
+      <img
+        src="../../../../../assets/img/avatar.png"
+        id="icon"
+        class="profile-user-img img-fluid img-circle"
+        alt="User Icon"
+      />
     </div>
+    <form [formGroup]="loginForm">
+      <input
+        type="text"
+        id="login"
+        class="second"
+        name="email"
+        placeholder="Enter Your Email"
+        formControlName="emailId"
+        [ngClass]="{
+          'is-invalid': submitted && f.emailId.errors
+        }"
+      />
+      <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+        <div *ngIf="f.emailId.errors.required">Email is required</div>
+        <div *ngIf="f.emailId.errors.email">
+          Email must be a valid email address
+        </div>
+      </div>
+      <input
+        type="password"
+        id="password"
+        class="third"
+        name="password"
+        placeholder="Enter Your Password"
+        formControlName="password"
+        [ngClass]="{
+          'is-invalid': submitted && f.password.errors
+        }"
+      />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+      <input type="submit" class="fourth" value="Log In" (click)="login()" />
+    </form>
   </div>
-
-  
+</div>

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  baseURL : '',
   admin : 'admin',
   adminDashboard : 'admin/dashboard',
   adminSignIn : 'admin/login',

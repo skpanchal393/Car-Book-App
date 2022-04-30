@@ -25,7 +25,7 @@
           <div class="col-md-12">
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
-                <form class="form-horizontal">
+                <form class="form-horizontal" [formGroup]="profileForm">
                   <div class="form-group">
                     <div class="text-center">
                       <img
@@ -46,7 +46,14 @@
                         class="form-control"
                         id="inputFirstName"
                         placeholder="First Name"
+                        formControlName="firstName"
+                        [ngClass]="{
+                          'is-invalid': submitted && f.firstName.errors
+                        }"
                       />
+                      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                      </div>
                     </div>
                   </div>
 
@@ -60,7 +67,14 @@
                         class="form-control"
                         id="inputLastName"
                         placeholder="Last Name"
+                        formControlName="lastName"
+                        [ngClass]="{
+                          'is-invalid': submitted && f.lastName.errors
+                        }"
                       />
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                      </div>
                     </div>
                   </div>
 
@@ -74,28 +88,112 @@
                         class="form-control"
                         id="inputEmail"
                         placeholder="Email"
+                        formControlName="emailId"
+                        [ngClass]="{
+                          'is-invalid': submitted && f.emailId.errors
+                        }"
                       />
+                      <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+                        <div *ngIf="f.emailId.errors.required">Email is required</div>
+                        <div *ngIf="f.emailId.errors.email">
+                          Email must be a valid email address
+                        </div>
+                      </div>
                     </div>
                   </div>
-<!--                   
                   <div class="form-group row">
-                    <label for="inputExperience" class="col-sm-2 col-form-label"
-                      >Experience</label
+                    <div class="offset-sm-2 col-sm-10">
+                      <button type="submit" class="btn btn-success" (click)="profileUpdate()">
+                        Update
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary card-outline">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Change Password</h3>
+              </div>
+              <div class="card-body box-profile">
+                <form class="form-horizontal" [formGroup]="changePasswordForm">
+
+                  <div class="form-group row">
+                    <label for="inputOldPassword" class="col-sm-2 col-form-label"
+                      >Old Password</label
                     >
                     <div class="col-sm-10">
-                      <textarea
+                      <input
+                        type="password"
                         class="form-control"
-                        id="inputExperience"
-                        placeholder="Experience"
-                        spellcheck="false"
-                      ></textarea>
+                        id="inputOldPassword"
+                        placeholder="Enter Your Old Password"
+                        formControlName="oldPassword"
+                        [ngClass]="{
+                          'is-invalid': submitted2 && p.oldPassword.errors
+                        }"
+                      />
+                      <div *ngIf="submitted2 && p.oldPassword.errors" class="invalid-feedback">
+                        <div *ngIf="p.oldPassword.errors.required">old Password is required</div>
+                      </div>
                     </div>
-                  </div> -->
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputNewPassword" class="col-sm-2 col-form-label"
+                      >New Password</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="inputNewPassword"
+                        placeholder="Enter Your New Password"
+                        formControlName="newPassword"
+                        [ngClass]="{
+                          'is-invalid': submitted2 && p.newPassword.errors
+                        }"
+                      />
+                      <div *ngIf="submitted2 && p.newPassword.errors" class="invalid-feedback">
+                        <div *ngIf="p.newPassword.errors.required">New Password is required</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputNewPassword" class="col-sm-2 col-form-label"
+                      >Confirm New Password</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="inputNewPassword"
+                        placeholder="Confirm New  Password"
+                        formControlName="confirmNewPassword"
+                        [ngClass]="{
+                          'is-invalid': submitted2 && p.confirmNewPassword.errors
+                        }"
+                      />
+                      <div *ngIf="submitted2 && p.confirmNewPassword.errors" class="invalid-feedback">
+                        <div *ngIf="p.confirmNewPassword.errors.required">Confirm New Password is required</div>
+                      </div>
+                    </div>
+                  </div>
 
                   <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                      <button type="submit" class="btn btn-danger">
-                        Update
+                      <button type="submit" class="btn btn-warning" (click)="changePassowrd()">
+                        Change
                       </button>
                     </div>
                   </div>

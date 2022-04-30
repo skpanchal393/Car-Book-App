@@ -23,31 +23,112 @@
         <div class="card">
           <div class="card-header border-transparent">
             <div class="col-12">
-              <div class="form-group">
-                <label for="inputName">Name</label>
-                <input type="text" id="inputName" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label for="inputEmail">E-Mail</label>
-                <input type="email" id="inputEmail" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label for="inputSubject">Subject</label>
-                <input type="text" id="inputSubject" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label for="inputMessage">Message</label>
-                <textarea
-                  id="inputMessage"
-                  class="form-control"
-                  rows="4"
-                ></textarea>
-              </div>
+              <form class="row" [formGroup]="myForm">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="inputName">Title</label>
+                    <input
+                      type="text"
+                      id="inputTitle"
+                      class="form-control"
+                      placeholder="Title"
+                      formControlName="title"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.title.errors
+                      }"
+                    />
+                    <div
+                      *ngIf="submitted && f.title.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.title.errors.required">
+                        Title is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="inputFile">Image</label>
+                    <div class="custom-file">
+                      <input
+                        type="file"
+                        class="custom-file-input"
+                        id="customFile"
+                        formControlName="Image"
+                        [ngClass]="{
+                          'is-invalid': submitted && f.Image.errors
+                        }"
+                      />
+                      <div
+                        *ngIf="submitted && f.Image.errors"
+                        class="invalid-feedback"
+                      >
+                        <div *ngIf="f.Image.errors.required">
+                          Image is required
+                        </div>
+                      </div>
+                      <label class="custom-file-label" for="customFile"
+                        >Choose file</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="inputMessage">Description</label>
+                    <tinymce
+                      [(ngModel)]="html"
+                      [config]="config"
+                      formControlName="Description"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.Description.errors
+                      }"
+                    ></tinymce>
+                    <div
+                      *ngIf="submitted && f.Description.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.Description.errors.required">
+                        Description is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="form-group">
+                    <label>Select Status</label>
+                    <select
+                      class="form-control"
+                      formControlName="Status"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.Status.errors
+                      }"
+                    >
+                      <option value="">Select Status</option>
+                      <option value="Active">Active</option>
+                      <option value="InActive">InActive</option>
+                    </select>
+                    <div
+                      *ngIf="submitted && f.Status.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.Status.errors.required">
+                        Status is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
               <div class="form-group">
                 <input
                   type="submit"
                   class="btn btn-primary"
-                  value="Send message"
+                  value="Create"
+                  (click)="create()"
                 />
               </div>
             </div>

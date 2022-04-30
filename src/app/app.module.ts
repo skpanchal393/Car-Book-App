@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 // dependency
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxTinymceModule } from 'ngx-tinymce';
 
 // Routing
 import { AppRoutingModule } from './routes/app-routing.module';
@@ -51,9 +53,14 @@ import { PrivacyComponent,CreatePrivacyComponent } from './modules/admin/pages/p
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AdminRoutingModule,
     NgbPaginationModule, 
+    NgxTinymceModule.forRoot({
+      baseURL: 'https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.7.1/',
+    }),
     NgbAlertModule
   ],
   providers: [],
