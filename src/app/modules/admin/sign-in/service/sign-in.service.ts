@@ -17,6 +17,6 @@ export class SignInService {
   }
 
   public login(Data: any): Observable<any[]> {
-    return this.http.post<any[]>(this.apiURL + '/auth/login', Data)
+    return this.http.post<any[]>(this.apiURL + 'adminAuth/login', Data)
   }
 }

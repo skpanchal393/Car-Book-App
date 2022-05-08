@@ -8,6 +8,8 @@ import { environment } from '../../../../../environments/environment';
 export class DashboardComponent implements OnInit {
 
   dashboardRoute : any = environment.adminDashboard;
+  BlogPageRoute : any = environment.adminBlogs;
+  bookingPageRoute : any = environment.bookingList;
 
   constructor() { }
 

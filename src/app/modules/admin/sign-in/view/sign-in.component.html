@@ -1,57 +1,77 @@
-<div
-  class="wrapper"
-  style="
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    min-height: 100%;
-    padding: 20px;
-  "
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#4586FF"
+  type="cog"
+  [fullScreen]="true"
+  template=""
 >
-  <div id="formContent">
-    <div class="first">
-      <img
-        src="../../../../../assets/img/avatar.png"
-        id="icon"
-        class="profile-user-img img-fluid img-circle"
-        alt="User Icon"
-      />
-    </div>
-    <form [formGroup]="loginForm">
-      <input
-        type="text"
-        id="login"
-        class="second"
-        name="email"
-        placeholder="Enter Your Email"
-        formControlName="emailId"
-        [ngClass]="{
-          'is-invalid': submitted && f.emailId.errors
-        }"
-      />
-      <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
-        <div *ngIf="f.emailId.errors.required">Email is required</div>
-        <div *ngIf="f.emailId.errors.email">
-          Email must be a valid email address
+  <p style="color: white">Loading...</p>
+</ngx-spinner>
+<div class="wrapper">
+  <div class="login-page">
+    <div class="login-box">
+      <div class="login-logo">
+        <a><b>Admin</b></a>
+      </div>
+      <div class="card">
+        <div class="card-body login-card-body">
+          <p class="login-box-msg">Sign-In</p>
+          <form [formGroup]="loginForm">
+            <div class="input-group mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                formControlName="emailId"
+                [ngClass]="{
+                  'is-invalid': submitted && f.emailId.errors
+                }"
+              />
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+              <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+                <div *ngIf="f.emailId.errors.required">Email is required</div>
+                <div *ngIf="f.emailId.errors.email">
+                  Email must be a valid email address
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                formControlName="password"
+                [ngClass]="{
+                  'is-invalid': submitted && f.password.errors
+                }"
+              />
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+              <div
+                *ngIf="submitted && f.password.errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f.password.errors.required">Password is required</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <button (click)="login()" class="btn btn-primary btn-block">
+                  Sign In
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-      <input
-        type="password"
-        id="password"
-        class="third"
-        name="password"
-        placeholder="Enter Your Password"
-        formControlName="password"
-        [ngClass]="{
-          'is-invalid': submitted && f.password.errors
-        }"
-      />
-      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-        <div *ngIf="f.password.errors.required">Password is required</div>
-      </div>
-      <input type="submit" class="fourth" value="Log In" (click)="login()" />
-    </form>
+    </div>
   </div>
 </div>

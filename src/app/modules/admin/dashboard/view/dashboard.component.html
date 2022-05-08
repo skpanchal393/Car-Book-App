@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
-                <a [routerLink]="'/'+dashboardRoute">Home</a>
+                <a [routerLink]="'/' + dashboardRoute">Home</a>
               </li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
@@ -52,6 +52,9 @@
         <div class="card">
           <div class="card-header border-transparent">
             <h3 class="card-title">Latest Car Booking</h3>
+            <div class="card-tools">
+              <button class="btn btn-success" [routerLink]="'/'+bookingPageRoute">View All Booking</button>
+            </div>
             <!-- <div class="card-tools">
               <button
                 type="button"
@@ -176,13 +179,86 @@
               </table>
             </div>
           </div>
-
-          <div class="card-footer clearfix">
+          <!-- <div class="card-footer clearfix">
             <a
               href="javascript:void(0)"
               class="btn btn-sm btn-secondary float-right"
               >View All Booking</a
             >
+          </div> -->
+        </div>
+
+        <div class="card">
+          <div class="card-header border-transparent">
+            <h3 class="card-title">Latest Blogs</h3>
+            <div class="card-tools">
+              <button class="btn btn-success" [routerLink]="'/'+BlogPageRoute">View All Blogs</button>
+            </div>
+          </div>
+
+          <div class="card-body p-0">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                  <span class="info-box-icon">
+                    <img
+                      src="../../../../../../assets/img/photo3.jpg"
+                      style="width: 100px"
+                      alt=""
+                  /></span>
+                  <div class="info-box-content">
+                    <span class="info-box-number" style="cursor: pointer;" [routerLink]="'/'+BlogPageRoute">Lorem ipsum</span>
+                    <span class="info-box-text"> Lorem ipsum dolor....</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                  <span class="info-box-icon">
+                    <img
+                      src="../../../../../../assets/img/photo3.jpg"
+                      style="width: 100px"
+                      alt=""
+                  /></span>
+                  <div class="info-box-content">
+                    <span class="info-box-number" style="cursor: pointer;" [routerLink]="'/'+BlogPageRoute">Lorem ipsum</span>
+                    <span class="info-box-text"> Lorem ipsum dolor....</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                  <span class="info-box-icon">
+                    <img
+                      src="../../../../../../assets/img/photo3.jpg"
+                      style="width: 100px"
+                      alt=""
+                  /></span>
+                  <div class="info-box-content">
+                    <span class="info-box-number" style="cursor: pointer;" [routerLink]="'/'+BlogPageRoute">Lorem ipsum</span>
+                    <span class="info-box-text"> Lorem ipsum dolor....</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                  <span class="info-box-icon">
+                    <img
+                      src="../../../../../../assets/img/photo3.jpg"
+                      style="width: 100px"
+                      alt=""
+                  /></span>
+                  <div class="info-box-content">
+                    <span class="info-box-number" style="cursor: pointer;" [routerLink]="'/'+BlogPageRoute">Lorem ipsum</span>
+                    <span class="info-box-text"> Lorem ipsum dolor....</span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
           </div>
         </div>
       </div>

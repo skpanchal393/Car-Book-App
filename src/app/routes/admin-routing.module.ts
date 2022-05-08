@@ -5,122 +5,77 @@ import { environment } from '../../environments/environment';
 import { SignInComponent } from '../modules/admin/sign-in/component/sign-in.component';
 import { ProfileComponent } from '../modules/admin/profile/component/profile.component';
 import { AuthGuard } from '../guards/auth.guard';
+import { LoginGuard } from '../guards/login.guard';
 import { BookingListComponent } from '../modules/admin/booking-list/component/booking-list.component';
 import { SettingComponent } from '../modules/admin/setting/component/setting.component';
-import { AboutComponent, CreateAboutComponent } from '../modules/admin/pages/about/component/about.component';
-import { HomeComponent, CreateHomeComponent } from '../modules/admin/pages/home/component/home.component';
-import { ServiceComponent, CreateServiceComponent } from '../modules/admin/pages/service/component/service.component';
-import { ContactComponent, CreateContactComponent } from '../modules/admin/pages/contact/component/contact.component';
-import { PrivacyComponent, CreatePrivacyComponent } from '../modules/admin/pages/privacy/component/privacy.component';
+import { CreatePageComponent, PageComponent } from '../modules/admin/pages/component/page.component';
+import { BlogComponent, CreateBlogComponent } from '../modules/admin/blog/component/blog.component';
 
 const routes: Routes = [
     {
         path : environment.admin,
-        component : SignInComponent
+        component : SignInComponent,
+        canActivate: [LoginGuard],
     },
     {
         path : environment.adminSignIn,
-        component : SignInComponent
+        component : SignInComponent,
+        canActivate: [LoginGuard],
     },
     {
         path : environment.adminDashboard,
         component : DashboardComponent,
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
     },
     {
         path : environment.adminProfile,
         component : ProfileComponent,
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
     },
     {
-        path : environment.bokkingList,
+        path : environment.bookingList,
         component : BookingListComponent,
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
     },
     {
         path : environment.adminStting,
         component : SettingComponent,
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
     },
     {
-        path : environment.adminHome,
-        component : HomeComponent,
-        // canActivate: [AuthGuard],
+        path : environment.adminPages,
+        component : PageComponent,
+        canActivate: [AuthGuard],
     },
     {
-        path : environment.adminCreateHome,
-        component : CreateHomeComponent,
-        // canActivate: [AuthGuard],
+        path : environment.adminPagesCreate,
+        component : CreatePageComponent,
+        canActivate: [AuthGuard],
     },
     {
-        path : environment.adminEditHome,
-        component : CreateHomeComponent,
-        // canActivate: [AuthGuard],
+        path : environment.adminPagesEdit+'/:pageId',
+        component : CreatePageComponent,
+        canActivate: [AuthGuard],
     },
     {
-        path : environment.adminAbout,
-        component : AboutComponent,
-        // canActivate: [AuthGuard],
+        path : environment.adminBlogs,
+        component : BlogComponent,
+        canActivate: [AuthGuard],
     },
     {
-        path : environment.adminCreateAbout,
-        component : CreateAboutComponent,
-        // canActivate: [AuthGuard],
+        path : environment.adminBlogsCreate,
+        component : CreateBlogComponent,
+        canActivate: [AuthGuard],
     },
     {
-        path : environment.adminEditAbout,
-        component : CreateAboutComponent,
-        // canActivate: [AuthGuard],
-    },
-    {
-        path : environment.adminService,
-        component : ServiceComponent,
-        // canActivate: [AuthGuard],
-    },
-    {
-        path : environment.adminCreateService,
-        component : CreateServiceComponent,
-        // canActivate: [AuthGuard],
-    },
-    {
-        path : environment.adminEditService,
-        component : CreateServiceComponent,
-        // canActivate: [AuthGuard],
-    },
-    {
-        path : environment.adminContact,
-        component : ContactComponent,
-        // canActivate: [AuthGuard],
-    },
-    {
-        path : environment.adminCreateContact,
-        component : CreateContactComponent,
-        // canActivate: [AuthGuard],
-    },
-    {
-        path : environment.adminEditContact,
-        component : CreateContactComponent,
-        // canActivate: [AuthGuard],
-    },
-    {
-        path : environment.adminPrivacy,
-        component : PrivacyComponent,
-        // canActivate: [AuthGuard],
-    },
-    {
-        path : environment.adminCreatePrivacy,
-        component : CreatePrivacyComponent,
-        // canActivate: [AuthGuard],
-    },
-    {
-        path : environment.adminEditPrivacy,
-        component : CreatePrivacyComponent,
-        // canActivate: [AuthGuard],
+        path : environment.adminBlogsEdit+'/:pageId',
+        component : CreateBlogComponent,
+        canActivate: [AuthGuard],
     },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AdminRoutingModule { }

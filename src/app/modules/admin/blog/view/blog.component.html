@@ -1,0 +1,83 @@
+<div class="wrapper">
+  <app-admin-header></app-admin-header>
+  <app-admin-sidebar></app-admin-sidebar>
+
+  <div class="content-wrapper" style="min-height: 1604.8px">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Blog</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a [routerLink]="'/'+dashboardRoute">Home</a></li>
+              <li class="breadcrumb-item active">Blog</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-header border-transparent">
+            <h3 class="card-title">Blog Lists</h3>
+            <div class="card-tools">
+              <button class="btn btn-success" [routerLink]="'/'+createRoute">Create</button>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table m-0">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Blog Name</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of blogsData;let i =index;">
+                    <td>
+                      <a>{{i+1}}</a>
+                    </td>
+                    <td>
+                      <a>{{item.menu_Data['vTitle']}}</a>
+                    </td>
+                    <td>
+                      <img
+                        src="../../../../../../assets/img/photo3.jpg"
+                        style="width: 100px"
+                        alt=""
+                      />
+                    </td>
+                    <td>{{item.vTitle}}</td>
+                    <td>
+                     <span *ngIf="item.eStatus === 'Active'" class="badge badge-success">{{item.eStatus}}</span>
+                     <span *ngIf="item.eStatus !== 'Active'" class="badge badge-danger">{{item.eStatus}}</span>
+                    </td>
+                    <td>
+                      <a class="btn btn-app" (click)="redirectEditBlog(item)">
+                        <i class="fas fa-edit"></i> Edit
+                      </a>
+                      <a class="btn btn-app" (click)="deleteBlog(item)">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <app-admin-footer></app-admin-footer>
+</div>
