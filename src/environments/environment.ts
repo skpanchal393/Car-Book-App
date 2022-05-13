@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURL : 'http://192.168.89.135:5000/api/',
+  baseURL : 'http://localhost:5000/api/',
   admin : 'admin',
   adminDashboard : 'admin/dashboard',
   adminSignIn : 'admin/login',

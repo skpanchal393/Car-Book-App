@@ -17,10 +17,10 @@ export class ProfileService {
   }
 
   public getUserProfileAPI(Data: any): Observable<any[]> {
-    return this.http.post<any[]>(this.apiURL + 'profile/getUserById', Data)
+    return this.http.post<any[]>(this.apiURL + 'adminAuth/getAdminById', Data)
   }
 
   public updateUserProfileAPI(Data: any): Observable<any[]> {
-    return this.http.post<any[]>(this.apiURL + 'profile/profileUpdate', Data)
+    return this.http.post<any[]>(this.apiURL + 'adminAuth/adminUpdate', Data)
   }
 }
