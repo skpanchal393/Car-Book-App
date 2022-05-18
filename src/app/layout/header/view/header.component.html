@@ -1,0 +1,18 @@
+<header id="header">
+  <div class="header-top"></div>
+  <div class="container-fluid main-menu">
+    <div class="inner-menu">
+      <a [routerLink]="homeRoute" class="Logo">Taxi Logo </a>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a [routerLink]="homeRoute" routerLinkActive="active">Home</a></li>
+          <li><a [routerLink]="'/'+aboutRoute" routerLinkActive="active">About</a></li>
+          <li><a [routerLink]="'/'+serviceRoute" routerLinkActive="active">Services</a></li>
+          <li><a [routerLink]="'/'+conatctRoute" routerLinkActive="active">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- #nav-menu-container -->
+    </div>
+  </div>
+</header>
+<!-- #header -->

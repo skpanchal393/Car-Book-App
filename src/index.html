@@ -6,8 +6,65 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+	<!--
+			CSS
+			============================================= -->
+	<link rel="stylesheet" href="./assets/front/css/linearicons.css">
+	<link rel="stylesheet" href="./assets/front/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./assets/front/css/bootstrap.css">
+	<link rel="stylesheet" href="./assets/front/css/magnific-popup.css">
+	<link rel="stylesheet" href="./assets/front/css/nice-select.css">
+	<link rel="stylesheet" href="./assets/front/css/animate.min.css">
+	<link rel="stylesheet" href="./assets/front/css/jquery-ui.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="./assets/front/css/main.css">
+	<link rel="stylesheet" href="./assets/front/css/media.css">
   </head>
   <body id="showHideSiderBar">
     <app-root></app-root>
+
+    <script src="./assets/front/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="./assets/front/js/vendor/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="./assets/front/js/easing.min.js"></script>
+    <script src="./assets/front/js/hoverIntent.js"></script>
+    <script src="./assets/front/js/superfish.min.js"></script>
+    <script src="./assets/front/js/jquery.ajaxchimp.min.js"></script>
+    <script src="./assets/front/js/jquery.magnific-popup.min.js"></script>
+    <script src="./assets/front/js/jquery-ui.js"></script>
+    <script src="./assets/front/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/front/js/mail-script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="./assets/front/js/main.js"></script>
  </body>
+ <script>
+  $(document).ready(function () {
+    $(".owl-carousel").owlCarousel();
+  });
+
+  $(".banner-slider.owl-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    autoplay: true,
+    dost: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 1,
+      },
+      1000: {
+        items: 1,
+      },
+    },
+  });
+</script>
 </html>

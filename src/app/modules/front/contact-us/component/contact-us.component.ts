@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-contact-us',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../style/contact-us.component.css']
 })
 export class FrontContactUsComponent implements OnInit {
+
+  homeRoute : any = environment.home;
 
   constructor() { }
 

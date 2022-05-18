@@ -18,6 +18,11 @@ export const environment = {
   adminBlogsEdit : 'admin/blog/edit',
   adminBlogs : 'admin/blog',
   home : '/',
+  about : 'about',
+  service : 'service',
+  contactUS : 'contact',
+  blog:'blog',
+  privacy:'privacy'
 };
 
 /*
